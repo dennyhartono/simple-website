@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Christmas Surprise</title>
+    <style>
+        body {
+            background-color: #0d1b2a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        #content { display: none; }
+        .button-start {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #d62828;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(214, 40, 40, 0.4);
+        }
+        h1 { font-size: 3rem; color: #f9d423; text-shadow: 2px 2px #d62828; }
+        .message { font-size: 1.5rem; margin: 20px; }
+        .snow { position: absolute; top: 0; left: 0; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Interaction Button (Required for Audio) -->
+    <button id="startButton" class="button-start">Click for a Christmas Surprise 🎄🎁</button>
+
+    <div id="content">
+        <h1>Merry Christmas Jilly!</h1>
+        <div class="message">
+            "May your day filled with happiness and joy with your family ✨."
+            <p>Happy Holiday 🤩</p>
+            <p>ps: you are my favourite christmas gift </p>
+        </div>
+        <!-- Song Source: Replace 'song.mp3' with your actual music link -->
+        <audio id="christmasSong" loop>
+            <source src="D:\Merry\Brenda Lee - Rockin' Around The Christmas Tree (Official Lyric Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        const btn = document.getElementById('startButton');
+        const content = document.getElementById('content');
+        const song = document.getElementById('christmasSong');
+
+        btn.addEventListener('click', () => {
+            btn.style.display = 'none';
+            content.style.display = 'block';
+            song.play(); // Starts the music after interaction
+        });
+    </script>
+</body>
+</html>
